@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Shopify ThemeKit UI</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles.css">
+
+  <!-- Scripts -->
+  <script>
+    delete module.exports
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="./window.js" charset="utf-8"></script>
+
+</head>
+
+<body>
+  <div id="container" class="container-fluid">
+
+    <div class="footer">
+      <p>
+        Version 0.1 Beta | Released 20, March 2019
+      </p>
+      <p>
+          Requires the
+          <a href="https://shopify.github.io/themekit/" target="_blank">
+            Shopify ThemeKit
+          </a>
+        to be installed on your computer.
+      </p>
+      <p>
+        Developed &amp; Maintained by
+        <a href="https://github.com/awhipp" target="_blank">
+          Alexander Whipp
+        </a>
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h3 class="heading">Previous Configurations</h3>
+        <select id="history-list">
+          <option selected> None Used... </option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Input row -->
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h3 class="heading">Store URL</h3>
+        <input type="text" id="store-url"
+                  class="form-control text-input"
+                  placeholder="you-store.myshopify.com" value="">
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h3 class="heading">Store Password</h3>
+        <input type="text" id="store-password"
+                  class="form-control text-input"
+                  placeholder="your-password" value=""/>
+      </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 "></div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+        <input type="submit" id="submit" class="form-control" value="Get Theme List"/>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 "></div>
+    </div>
+
+    <!-- Theme List row -->
+    <div class="row theme-row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h3 class="heading">Theme List</h3>
+        <select id="theme-list">
+          <option selected> Loading... </option>
+        </select>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 "></div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+        <input type="submit" id="download" class="form-control" value="Download Selected"/>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 "></div>
+    </div>
+
+    <br>
+
+    <div class="row centered">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <br>
+        <p id="statusProgress"></p>
+        <p id="statusError"></p>
+        <p id="statusCode"></p>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
