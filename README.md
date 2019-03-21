@@ -29,5 +29,5 @@ Very simple.
 
 - Install electron-packager: `npm install electron-packager -g`
 - Install stat: `npm install -g stat`
-- Windows: `electron-packager . shopify-themekit-ui --overwrite --asar --platform=win32 --out=dist/win32 --arch=ia32`
+- Windows: `electron-packager . shopify-themekit-ui --overwrite --asar --platform=win32 --out=dist/win32 --arch=x64`
 - OSX: `electron-packager . --platform=darwin --arch=x64 --prune=true --out=dist/osx --overwrite`
