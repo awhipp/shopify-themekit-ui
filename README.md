@@ -19,6 +19,10 @@ Very simple.
 - Enter your page name, and password and then you can download any theme to the directory.
 - These credentials are saved locally for 1 year and you can easily switch between websites and themes with ease.
 
+## Download
+
+To download visit our [release page](https://github.com/awhipp/shopify-themekit-ui/releases). You can find OSX and Win32 binaries here.
+
 ## Development
 
 - This is built on Electron. 
