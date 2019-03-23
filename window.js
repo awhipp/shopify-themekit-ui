@@ -1,8 +1,9 @@
 $(() => {
-  $('.theme-row').hide()
-  $("#download").hide()
+  $('.theme-row').hide();
+  $("#download").hide();
 
   const exec = require('child_process').exec;
+  const fs = require('fs');
   var session = require('electron').remote.session;
   var ses = session.fromPartition('persist:name');
 
@@ -14,6 +15,7 @@ $(() => {
     var history = "";
     var currentList = $("#history-list").find("option");
     var added = false;
+    url = url.trim();
     for(var i =0; i< currentList.length; i++) {
       var historyObj = currentList[i].value;
       if(i == 0) {
@@ -89,10 +91,13 @@ $(() => {
   getHistory();
 
   $('#submit').on('click', (e, bounds) => {
-    $('.theme-row').show()
+    $('.theme-row').show();
 
-    exec("theme get --list -s=\"" + storeUrl +"\" -p=" + storePassword +"", (err, stdout, stderr) => {
+    if (!fs.existsSync("themes")){
+      fs.mkdirSync("themes");
+    }
 
+    exec("theme get --list -s=\"" + storeUrl +"\" -p=" + storePassword, (err, stdout, stderr) => {
 
       if (err) {
         // node couldn't execute the command
@@ -128,7 +133,18 @@ $(() => {
   });
 
   $('#download').on('click', (e, bounds) => {
-    var proc = exec("theme get -s=\"" + storeUrl +"\" -p=" + storePassword +" -t=" + themeId);
+    $("#statusCode").html("");
+
+    const dir = "themes/" + storeUrl;
+    try {
+      if (!fs.existsSync(dir)){
+        fs.mkdirSync(dir);
+      }
+    } catch (err) {
+      window.alert(err);
+    }
+
+    var proc = exec("theme get -s=\"" + storeUrl +"\" -p=" + storePassword +" -t=" + themeId + " -d=\"" + dir +"\" -c=\"themes/config.yml\"");
     proc.stdout.on('data', function(data) {
         if(data.indexOf("[2K") > 0) {
           data = data.substring(data.indexOf("[2K")+4);
@@ -140,7 +156,7 @@ $(() => {
     });
     proc.on('close', function(code) {
         if(code == 0) {
-          code = "Done -- Code can be found in this directory.";
+          code = "Done -- Code can be found in: " + dir;
         }
         $("#statusCode").html("<b>[EXIT_CODE]</b> " + code);
     });
@@ -148,4 +164,4 @@ $(() => {
 
   $('#store-password').focus() // focus input box
   $('#store-url').focus() // focus input box
-})
+});

@@ -18,6 +18,7 @@ Very simple.
 - Run the Shopify Themekit UI executable
 - Enter your page name, and password and then you can download any theme to the directory.
 - These credentials are saved locally for 1 year and you can easily switch between websites and themes with ease.
+- Every website will be added to the `themes/site.myshopify.com` folder next to the application.
 
 ## Download
 

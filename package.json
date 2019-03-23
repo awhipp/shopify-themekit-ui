@@ -1,6 +1,6 @@
 {
   "name": "themekit-ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "authors": "Alexander Whipp <awhipp.github.io>",
   "description": "Allows users to visually see and manipulate themekit through a UI",
   "repository": "awhipp/themekit-ui",
