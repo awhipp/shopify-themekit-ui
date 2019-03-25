@@ -11,6 +11,20 @@ $(() => {
   var storePassword = "";
   var themeId = "";
 
+  function deleteFolderRecursive(path) {
+  if (fs.existsSync(path)) {
+    fs.readdirSync(path).forEach(function(file, index){
+      var curPath = path + "/" + file;
+      if (fs.lstatSync(curPath).isDirectory()) { // recurse
+        deleteFolderRecursive(curPath);
+      } else { // delete file
+        fs.unlinkSync(curPath);
+      }
+    });
+    fs.rmdirSync(path);
+  }
+};
+
   function setHistory(url, pw){
     var history = "";
     var currentList = $("#history-list").find("option");
@@ -137,6 +151,9 @@ $(() => {
 
     const dir = "themes/" + storeUrl;
     try {
+      if(fs.existsSync(dir)) {
+        deleteFolderRecursive(dir);
+      }
       if (!fs.existsSync(dir)){
         fs.mkdirSync(dir);
       }

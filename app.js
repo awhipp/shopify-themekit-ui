@@ -7,7 +7,7 @@ var window = null;
 // Wait until the app is ready
 app.once('ready', () => {
   window = new BrowserWindow({
-    "width": 800,  "height": 600, "backgroundColor": "#EFEFEF", "show": false
+    "width": 800,  "height": 700, "show": false, "transparent": true
   });
 
   // Load a URL in the window to the local index.html path

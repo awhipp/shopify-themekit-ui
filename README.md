@@ -4,7 +4,7 @@ As a developer on multiple client websites, I found it exhausting to easily swap
 
 ## How does it work?
 
-![Shopify Themekit UI Example](https://i.imgur.com/ZkXUHq8l.png)
+![Shopify Themekit UI Example](https://i.imgur.com/FVrpMPml.png)
 
 Very simple.
 
@@ -26,7 +26,7 @@ To download visit our [release page](https://github.com/awhipp/shopify-themekit-
 
 ## Development
 
-- This is built on Electron. 
+- This is built on Electron.
 - Run `npm install`
 - Then run `npm start` to get the app open locally.
 
