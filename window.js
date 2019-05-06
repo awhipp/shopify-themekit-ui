@@ -111,7 +111,8 @@ $(() => {
       fs.mkdirSync("themes");
     }
 
-    exec("theme get --list -s=\"" + storeUrl +"\" -p=" + storePassword, (err, stdout, stderr) => {
+    var execList = "theme get --list -s=\"" + storeUrl +"\" -p=" + storePassword;
+    exec(execList, (err, stdout, stderr) => {
 
       if (err) {
         // node couldn't execute the command
@@ -161,7 +162,8 @@ $(() => {
       window.alert(err);
     }
 
-    var proc = exec("theme get -s=\"" + storeUrl +"\" -p=" + storePassword +" -t=" + themeId + " -d=\"" + dir +"\" -c=\"themes/config.yml\"");
+    var execGet = "theme get -s=\"" + storeUrl +"\" -p=" + storePassword +" -t=" + themeId + " -d=\"" + dir +"\" -c=\""+dir+"/config.yml\""
+    var proc = exec(execGet);
     proc.stdout.on('data', function(data) {
         if(data.indexOf("[2K") > 0) {
           data = data.substring(data.indexOf("[2K")+4);
