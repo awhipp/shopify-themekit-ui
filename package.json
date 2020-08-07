@@ -10,7 +10,7 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "electron": "4.2.0"
+    "electron": "9.1.2"
   },
   "dependencies": {
     "child_process": "1.0.2"
