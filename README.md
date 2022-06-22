@@ -34,5 +34,6 @@ To download visit our [release page](https://github.com/awhipp/shopify-themekit-
 
 - Install electron-packager: `npm install electron-packager -g`
 - Install stat: `npm install -g stat`
+- Install dependencies: `npm install`
 - Windows: `electron-packager . shopify-themekit-ui --overwrite --asar --platform=win32 --out=dist/win32 --arch=x64`
 - OSX: `electron-packager . --platform=darwin --arch=x64 --prune=true --out=dist/osx --overwrite`

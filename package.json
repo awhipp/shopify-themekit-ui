@@ -1,6 +1,6 @@
 {
   "name": "shopify-themekit-ui",
-  "version": "1.0.0",
+  "version": "1.1",
   "authors": "Alexander Whipp <awhipp.github.io>",
   "description": "Allows users to visually see and manipulate themekit through a UI",
   "repository": "awhipp/shopify-themekit-ui",
